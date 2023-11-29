@@ -214,7 +214,7 @@ body{
 
 
 }
-.uparrow{
+.uparrow,.uparrowcompany{
     display: none;
 }
 .downarrow{
