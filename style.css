@@ -24,7 +24,7 @@ body{
     justify-content: space-between;
 }
 .mobile{
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -268,13 +268,16 @@ body{
     color: var(--MediumGray);
 }
 
-@media (max-width:375px) {
+@media (max-width:800px) {
     body{
         overflow: scroll;
         padding-top: 10%;
     }
     .desktop{
         display: none;
+    }
+    .mobile{
+        display: flex;
     }
     .remotemain{
         display: flex;
@@ -290,6 +293,15 @@ body{
         display: flex;
         max-width: 100%;
         height: auto;
+        animation: slideFromTop 1s ease-out forwards; /* Delayed slide-in from the top */
+    }
+    @keyframes slideFromTop {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
     }
 
     .remoteheading{
@@ -301,8 +313,8 @@ body{
     }
     .remoteheadingmobile{
         display: flex;
-        text-align: center;
         font-size: 25px;
+        justify-content: center;
     }
 
     .remotepara{
