@@ -15,6 +15,7 @@ body{
     padding-left: 5%;
     padding-right: 5%;
     background-color: #fafafa;
+    overflow: hidden;
 }
 header{
     display: flex;
@@ -46,7 +47,7 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 12%;
+    width: 10%;
 }
 
 .login{
@@ -54,7 +55,9 @@ header{
     outline: none;
     background-color: transparent;
     color: var(--MediumGray);
+    cursor: pointer;
 }
+
 
 .register{
     background-color: transparent;
@@ -62,8 +65,9 @@ header{
     padding: 12px;
     outline: none;
     border: none;
-    border: 1px solid var(--AlmostBlack);
+    border: 1px solid var(--MediumGray);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .remotemain{
@@ -78,10 +82,45 @@ header{
     /* border: 1px solid red; */
 }
 
+.leftcontainer {
+    position: relative;
+    left: -100%; /* Initial position off-screen to the left */
+    animation: slideFromLeft 1s ease-out forwards;
+}
+
+@keyframes slideFromLeft {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+.remoteheading, .remotepara, .remotebtn {
+    opacity: 0; /* Initially hide the content */
+    animation: fadeIn 1s ease-out forwards 0.5s; /* Delayed fade-in after sliding */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
 .remoteimg{
     width: 100%;
     height: auto;
     max-height: 600px;
+    animation: slideFromRight 1s ease-out;
+}
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 .remoteleft{
@@ -90,7 +129,7 @@ header{
 }
 
 .remoteheading{
-    font-size: 70px;
+    font-size: 3.5em;
     font-weight: bold;
     width: 80%;
 }
@@ -101,6 +140,7 @@ header{
     margin-bottom: 5%;
     max-width: 70%;
     line-height: 1.5rem;
+    font-size: 1em;
 }
 
 .remotebtn{
@@ -117,12 +157,24 @@ header{
     bottom: 0;
     display: flex;
     gap: 10%;
+    opacity: 0;
+    animation: slideFromBottom 1s ease-out forwards 0.5s;
 }
 .clients-img >img{
     max-width: 100%;
     height: auto;
 }
 
+@keyframes slideFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .linkremote{
     display: flex;
     flex-direction: row;
@@ -169,8 +221,37 @@ header{
 .iconimg{
     margin-right: 8%;
 }
-/* 
-.downarrow{
-    max-width: 100%;
-    height: auto;
-} */
+
+.companyhover{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: normal;
+    background-color: #fff;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left:22%;
+    padding-left:1%;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.companyli:hover,.featureli:hover,.navli:hover,.login:hover{
+    color: var(--AlmostBlack);
+}
+.register:hover{
+    color: var(--AlmostBlack);
+    border: 2px solid var(--AlmostBlack);
+}
+.remotebtn:hover{
+    background-color: var(--AlmostWhite);
+    font-weight: bold;
+    color: var(--AlmostBlack);
+    border: 2px solid var(--AlmostBlack);
+}
+.companyitem{
+    margin-bottom: 15%;
+    color: var(--MediumGray);
+}

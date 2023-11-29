@@ -17,7 +17,7 @@
       <img src="./images/logo.svg" alt="">
       <ul class="navlist">
         <li class="navli featureli" onmouseover="showFeatureHover()" onmouseout="hideFeatureHover()"><span class="linkremote">Features<img src="./images/icon-arrow-down.svg" class="downarrow"><img src="./images/icon-arrow-up.svg" class="uparrow"></span></li>
-        <li class="navli"><span class="linkremote">Company<img src="./images/icon-arrow-down.svg" class="downarrow"></span></li>
+        <li class="navli companyli" onmouseover="showCompanyHover()" onmouseout="hideCompanyHover()"><span class="linkremote">Company<img src="./images/icon-arrow-down.svg" class="downarrowcompany"><img src="./images/icon-arrow-up.svg" class="uparrowcompany"></span></li>
         <li class="navli">Careers</li>
         <li class="navli">About</li>
       </ul>
@@ -61,13 +61,22 @@
       <p>Planning</p>
     </div>
   </div>
-  
+
+  <div class="companyhover">
+    <p class="companyitem">History</p>
+    <p class="companyitem">Our Team</p>
+    <p class="companyitem">Blog</p>
+  </div>
+
   <main class="remotemain">
     <div class="remoteleft">
-      <h1 class="remoteheading">Make<br> remote work</h1>
-      <p class="remotepara">Get your team in sync, no matter your location. Streamline processes, 
-        create team rituals, and watch productivity soar.</p>
-      <button class="remotebtn">Learn more</button>
+      <div class="leftcontainer">
+        <h1 class="remoteheading">Make<br> remote work</h1>
+        <p class="remotepara">Get your team in sync, no matter your location. Streamline processes, 
+          create team rituals, and watch productivity soar.</p>
+        <button class="remotebtn">Learn more</button>
+      </div>
+      
       <div class="clients-img">
         <img src="./images/client-databiz.svg" alt="client-databiz">
         <img src="./images/client-audiophile.svg" alt="client-audiophile">
@@ -102,22 +111,40 @@
   </div> -->
   <script>
     function showFeatureHover() {
-    var featureHover = document.querySelector('.featurehover');
-    featureHover.style.display = 'flex';
-    var uparrow = document.querySelector('.uparrow');
-    uparrow.style.display = 'flex';
-    var downarrow = document.querySelector('.downarrow');
-    downarrow.style.display = 'none';
-}
+        var featureHover = document.querySelector('.featurehover');
+        featureHover.style.display = 'flex';
+        var uparrow = document.querySelector('.uparrow');
+        uparrow.style.display = 'flex';
+        var downarrow = document.querySelector('.downarrow');
+        downarrow.style.display = 'none';
+    }
 
-function hideFeatureHover() {
-    var featureHover = document.querySelector('.featurehover');
-    featureHover.style.display = 'none';
-    var uparrow = document.querySelector('.uparrow');
-    uparrow.style.display = 'none';
-    var downarrow = document.querySelector('.downarrow');
-    downarrow.style.display = 'flex';
-}
+    function hideFeatureHover() {
+        var featureHover = document.querySelector('.featurehover');
+        featureHover.style.display = 'none';
+        var uparrow = document.querySelector('.uparrow');
+        uparrow.style.display = 'none';
+        var downarrow = document.querySelector('.downarrow');
+        downarrow.style.display = 'flex';
+    }
+    
+    function showCompanyHover() {
+        var companyHover = document.querySelector('.companyhover');
+        companyHover.style.display = 'flex';
+        var uparrow = document.querySelector('.uparrowcompany');
+        uparrow.style.display = 'flex';
+        var downarrow = document.querySelector('.downarrowcompany');
+        downarrow.style.display = 'none';
+    }
+
+    function hideCompanyHover() {
+        var companyHover = document.querySelector('.companyhover');
+        companyHover.style.display = 'none';
+        var uparrow = document.querySelector('.uparrowcompany');
+        uparrow.style.display = 'none';
+        var downarrow = document.querySelector('.downarrowcompany');
+        downarrow.style.display = 'flex';
+    }
 
   </script>
 </body>
